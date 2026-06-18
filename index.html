@@ -84,6 +84,35 @@ h1 .c{color:var(--coral);}
 
 .foot{margin-top:54px; text-align:center; font-size:13px; color:#b3a892; font-weight:600;}
 
+.prompt-wrap{margin:44px 0 8px;}
+.prompt-title{
+  font-size:22px; font-weight:800; color:var(--navy); margin-bottom:6px;
+  display:flex; align-items:center; gap:9px;
+}
+.prompt-sub{font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:18px;}
+.prompt-box{
+  position:relative; background:#22304a; border-radius:18px;
+  padding:26px 26px 26px; color:#e8edf5;
+}
+.prompt-box pre{
+  white-space:pre-wrap; word-break:break-word;
+  font-family:'Noto Sans KR',sans-serif; font-size:14.5px; line-height:1.7;
+  margin:0; color:#dfe6f2;
+}
+.prompt-box .hl{color:#ffb59b; font-weight:700;}
+.copybtn{
+  position:absolute; top:16px; right:16px;
+  background:var(--coral); color:#fff; border:none; cursor:pointer;
+  font-family:inherit; font-size:13px; font-weight:700;
+  padding:8px 16px; border-radius:10px; transition:background .15s;
+}
+.copybtn:hover{background:#c0573e;}
+.copybtn.done{background:#27ae60;}
+.prompt-tip{
+  font-size:13.5px; color:var(--muted); line-height:1.6; margin-top:14px;
+}
+.prompt-tip b{color:var(--coral-d);}
+
 @media(max-width:560px){
   .btns{flex-direction:column;}
 }
@@ -114,8 +143,8 @@ h1 .c{color:var(--coral);}
         </div>
       </div>
       <div class="btns">
-        <a class="btn problem" href="passive-active-50.pdf" download>📄 문제지</a>
-        <a class="btn answer" href="passive-active-50-answers.pdf" download>✅ 정답지</a>
+        <a class="btn problem" href="files/passive-active-50.pdf" download>📄 문제지</a>
+        <a class="btn answer" href="files/passive-active-50-answers.pdf" download>✅ 정답지</a>
       </div>
     </div>
 
@@ -129,8 +158,8 @@ h1 .c{color:var(--coral);}
         </div>
       </div>
       <div class="btns">
-        <a class="btn problem" href="passive-advanced-50.pdf" download>📄 문제지</a>
-        <a class="btn answer" href="passive-advanced-50-answers.pdf" download>✅ 정답지</a>
+        <a class="btn problem" href="files/passive-advanced-50.pdf" download>📄 문제지</a>
+        <a class="btn answer" href="files/passive-advanced-50-answers.pdf" download>✅ 정답지</a>
       </div>
     </div>
   </div>
@@ -139,6 +168,37 @@ h1 .c{color:var(--coral);}
     💡 <b>이렇게 짰어요.</b> 현재 → 미래 → 과거 순으로 시제를 바꿔가며
     의문문·부정문을 직접 만들게 했어요. 한 포인트를 시제만 바꿔 반복하니까
     아이가 규칙을 몸으로 익혀요. PC에서 받으면 바로 인쇄해서 쓰실 수 있어요.
+  </div>
+
+  <div class="prompt-wrap">
+    <div class="prompt-title">🤖 직접 만들고 싶다면 (보너스)</div>
+    <div class="prompt-sub">
+      아래를 <b style="color:var(--coral-d);">Claude(claude.ai)</b>에 붙여넣으세요.
+      Claude는 결과를 <b style="color:var(--coral-d);">A4 2단 PDF</b>로 바로 뽑아줘서
+      그대로 인쇄해 쓸 수 있어요. (다른 AI는 PDF 출력이 깔끔하게 안 나와요.)
+    </div>
+    <div class="prompt-box">
+      <button class="copybtn" onclick="copyPrompt()">복사</button>
+      <pre id="promptText">너는 중학교 영어 내신 전문 강사야.
+"<span class="hl">수동태</span>" 단원에서 학생들이 자주 틀리는
+<span class="hl">함정 위주</span>로 연습 문제 50개를 만들어줘.
+
+[조건]
+1. 난이도는 <span class="hl">기초 / 표준 / 고난도</span>로 표시.
+2. 문제 유형을 골고루 섞어줘:
+   - 부정문·의문문 전환
+   - 어법상 올바른 형태 고르기 (빈칸 + 동사원형 제시)
+   - 틀린 곳 찾아 고치기
+   - 의미 차이로 답이 갈리는 함정 문제
+3. 각 문제 위에 [부정문으로], [틀린 곳 고치기]처럼
+   무엇을 하라는지 한글로 표시.
+4. 정답은 본문에 섞지 말고 맨 끝에 따로 모아줘.
+5. <span class="hl">A4 2단으로 PDF 출력</span>이 가능하게 정리해줘.</pre>
+    </div>
+    <div class="prompt-tip">
+      💡 <b>팁.</b> "수동태" 자리를 다른 단원(시제·관계대명사 등)으로 바꾸면
+      어느 단원이든 똑같이 만들어져요. 만든 뒤 "PDF로 만들어줘"라고 하면 바로 출력돼요.
+    </div>
   </div>
 
   <div class="about">
@@ -150,5 +210,25 @@ h1 .c{color:var(--coral);}
   <div class="foot">© HongLab · 자유롭게 수업에 사용하세요 🙂</div>
 
 </div>
+<script>
+function copyPrompt(){
+  var el = document.getElementById('promptText');
+  var text = el.innerText || el.textContent;
+  var btn = document.querySelector('.copybtn');
+  navigator.clipboard.writeText(text).then(function(){
+    btn.textContent = '복사됨 ✓';
+    btn.classList.add('done');
+    setTimeout(function(){ btn.textContent='복사'; btn.classList.remove('done'); }, 1800);
+  }).catch(function(){
+    var r = document.createRange(); r.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    try{ document.execCommand('copy'); btn.textContent='복사됨 ✓'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='복사'; btn.classList.remove('done'); }, 1800);
+    }catch(e){}
+    window.getSelection().removeAllRanges();
+  });
+}
+</script>
 </body>
 </html>
