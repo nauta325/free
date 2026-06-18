@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수동태 드릴 100문항 · 무료 다운로드 | HongLab</title>
-<meta property="og:title" content="수동태 드릴 100문항 · 무료 다운로드">
-<meta property="og:description" content="현직 영어학원 원장이 직접 만든 수동태 연습지. 능·수동 전환 50문항 + 심화 빈칸 50문항.">
+<title>수동태 드릴 200문항 · 무료 다운로드 | HongLab</title>
+<meta property="og:title" content="수동태 드릴 200문항 · 무료 다운로드">
+<meta property="og:description" content="현직 영어학원 원장이 직접 만든 수동태 연습지. 기본 100문항 + 심화 100문항, 정답지까지.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 :root{
   --navy:#2c3e5d; --coral:#e0613f; --coral-d:#c0573e;
   --cream:#fbf7f0; --ink:#37352f; --muted:#857c6d; --line:#ece3d3;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:'Noto Sans KR',sans-serif;
+  font-family:'Pretendard',sans-serif;
   background:var(--cream); color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
@@ -38,15 +38,14 @@ body::before{
   font-size:14px; font-weight:700; padding:8px 22px; border-radius:40px;
   letter-spacing:1px; margin-bottom:22px;
 }
-h1{font-size:clamp(38px,7vw,58px); font-weight:900; color:var(--navy); line-height:1.18; letter-spacing:-1.5px;}
+h1{font-size:clamp(40px,7.5vw,60px); font-weight:800; color:var(--navy); line-height:1.16; letter-spacing:-1.5px;}
 h1 .c{color:var(--coral);}
 .lead{margin-top:20px; font-size:clamp(16px,3vw,20px); color:var(--muted); line-height:1.6; font-weight:500;}
 
 .files{display:flex; flex-direction:column; gap:20px; margin:48px 0 40px;}
 .set-card{
   background:#fff; border:2px solid var(--line); border-radius:20px;
-  padding:26px 28px;
-  transition:box-shadow .15s ease;
+  padding:26px 28px; transition:box-shadow .15s ease;
 }
 .set-card:hover{box-shadow:0 14px 30px rgba(44,62,93,.10);}
 .set-head{display:flex; align-items:flex-start; gap:18px;}
@@ -76,27 +75,20 @@ h1 .c{color:var(--coral);}
 }
 .note b{color:var(--coral-d);}
 
-.about{
-  margin-top:36px; text-align:center; font-size:15px; color:var(--muted); line-height:1.7;
-}
-.about a{color:var(--navy); font-weight:700; text-decoration:none; border-bottom:2px solid var(--line);}
-.about a:hover{border-color:var(--coral);}
-
-.foot{margin-top:54px; text-align:center; font-size:13px; color:#b3a892; font-weight:600;}
-
 .prompt-wrap{margin:44px 0 8px;}
 .prompt-title{
   font-size:22px; font-weight:800; color:var(--navy); margin-bottom:6px;
   display:flex; align-items:center; gap:9px;
 }
 .prompt-sub{font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:18px;}
+.prompt-sub b{color:var(--coral-d);}
 .prompt-box{
   position:relative; background:#22304a; border-radius:18px;
-  padding:26px 26px 26px; color:#e8edf5;
+  padding:26px 26px;
 }
 .prompt-box pre{
   white-space:pre-wrap; word-break:break-word;
-  font-family:'Noto Sans KR',sans-serif; font-size:14.5px; line-height:1.7;
+  font-family:'Pretendard',sans-serif; font-size:14.5px; line-height:1.7;
   margin:0; color:#dfe6f2;
 }
 .prompt-box .hl{color:#ffb59b; font-weight:700;}
@@ -108,14 +100,16 @@ h1 .c{color:var(--coral);}
 }
 .copybtn:hover{background:#c0573e;}
 .copybtn.done{background:#27ae60;}
-.prompt-tip{
-  font-size:13.5px; color:var(--muted); line-height:1.6; margin-top:14px;
-}
+.prompt-tip{font-size:13.5px; color:var(--muted); line-height:1.6; margin-top:14px;}
 .prompt-tip b{color:var(--coral-d);}
 
-@media(max-width:560px){
-  .btns{flex-direction:column;}
-}
+.about{margin-top:36px; text-align:center; font-size:15px; color:var(--muted); line-height:1.7;}
+.about a{color:var(--navy); font-weight:700; text-decoration:none; border-bottom:2px solid var(--line);}
+.about a:hover{border-color:var(--coral);}
+
+.foot{margin-top:54px; text-align:center; font-size:13px; color:#b3a892; font-weight:600;}
+
+@media(max-width:560px){ .btns{flex-direction:column;} }
 </style>
 </head>
 <body>
@@ -124,11 +118,11 @@ h1 .c{color:var(--coral);}
   <div class="brand"><span class="d"></span>HongLab · 홍보은영어</div>
 
   <div class="hero">
-    <span class="eyebrow">무료 수업 자료</span>
-    <h1>수동태 <span class="c">드릴 100문항</span></h1>
+    <span class="eyebrow">무료 수업 자료 · 2학기 지필 대비</span>
+    <h1>수동태 <span class="c">드릴 200문항</span></h1>
     <p class="lead">
-      아이들이 제일 헷갈리는 포인트만 골라 담았어요.<br>
-      현직 영어학원 원장이 수업에 쓰려고 직접 만든 연습지입니다.
+      아이들이 제일 헷갈리는 함정만 골라 담았어요.<br>
+      기본 100 + 심화 100, 정답지까지. 현직 영어학원 원장이 직접 만든 연습지입니다.
     </p>
   </div>
 
@@ -137,14 +131,14 @@ h1 .c{color:var(--coral);}
       <div class="set-head">
         <span class="ic">🔄</span>
         <div>
-          <span class="set">SET 1</span>
-          <span class="name">능·수동 전환 50문항</span>
-          <span class="desc">수동태 문장을 능동태로 바꾸기 · 의문문/부정문 포함</span>
+          <span class="set">기본 세트 · 100문항</span>
+          <span class="name">능 ↔ 수동 전환</span>
+          <span class="desc">현재·과거·미래·조동사·현재완료 + 불규칙·동형 과거분사 함정(hit·put·cut·read 등)</span>
         </div>
       </div>
       <div class="btns">
-        <a class="btn problem" href="files/passive-active-50.pdf" download>📄 문제지</a>
-        <a class="btn answer" href="files/passive-active-50-answers.pdf" download>✅ 정답지</a>
+        <a class="btn problem" href="basic-100.pdf" download>📄 문제지</a>
+        <a class="btn answer" href="basic-100-answers.pdf" download>✅ 정답지</a>
       </div>
     </div>
 
@@ -152,30 +146,30 @@ h1 .c{color:var(--coral);}
       <div class="set-head">
         <span class="ic">✍️</span>
         <div>
-          <span class="set">SET 2</span>
-          <span class="name">심화 빈칸 50문항</span>
-          <span class="desc">진행·완료·사역·지각동사 수동태까지 빈칸 채우기</span>
+          <span class="set">심화 세트 · 100문항</span>
+          <span class="name">진행형 · 4형식 · 5형식</span>
+          <span class="desc">is/was being p.p. + 4형식(to·for·of) + 5형식(사역·지각·elect 등) + 완료시제 혼합</span>
         </div>
       </div>
       <div class="btns">
-        <a class="btn problem" href="files/passive-advanced-50.pdf" download>📄 문제지</a>
-        <a class="btn answer" href="files/passive-advanced-50-answers.pdf" download>✅ 정답지</a>
+        <a class="btn problem" href="advanced-100.pdf" download>📄 문제지</a>
+        <a class="btn answer" href="advanced-100-answers.pdf" download>✅ 정답지</a>
       </div>
     </div>
   </div>
 
   <div class="note">
-    💡 <b>이렇게 짰어요.</b> 현재 → 미래 → 과거 순으로 시제를 바꿔가며
-    의문문·부정문을 직접 만들게 했어요. 한 포인트를 시제만 바꿔 반복하니까
-    아이가 규칙을 몸으로 익혀요. PC에서 받으면 바로 인쇄해서 쓰실 수 있어요.
+    💡 <b>이렇게 짰어요.</b> 모든 시제에 불규칙·동형 과거분사 함정을 곳곳에 섞고,
+    능↔수동을 양방향으로 연습하게 했어요. 4형식은 to·for·of 구분을 라벨로 명시했고요.
+    PC에서 받으면 바로 인쇄해서 쓰실 수 있어요.
   </div>
 
   <div class="prompt-wrap">
     <div class="prompt-title">🤖 직접 만들고 싶다면 (보너스)</div>
     <div class="prompt-sub">
-      아래를 <b style="color:var(--coral-d);">Claude(claude.ai)</b>에 붙여넣으세요.
-      Claude는 결과를 <b style="color:var(--coral-d);">A4 2단 PDF</b>로 바로 뽑아줘서
-      그대로 인쇄해 쓸 수 있어요. (다른 AI는 PDF 출력이 깔끔하게 안 나와요.)
+      아래를 <b>Claude(claude.ai)</b>에 붙여넣으세요.
+      Claude는 결과를 <b>A4 2단 PDF</b>로 바로 뽑아줘서 그대로 인쇄해 쓸 수 있어요.
+      (다른 AI는 PDF 출력이 깔끔하게 안 나와요.)
     </div>
     <div class="prompt-box">
       <button class="copybtn" onclick="copyPrompt()">복사</button>
@@ -196,8 +190,8 @@ h1 .c{color:var(--coral);}
 5. <span class="hl">A4 2단으로 PDF 출력</span>이 가능하게 정리해줘.</pre>
     </div>
     <div class="prompt-tip">
-      💡 <b>팁.</b> "수동태" 자리를 다른 단원(시제·관계대명사 등)으로 바꾸면
-      어느 단원이든 똑같이 만들어져요. 만든 뒤 "PDF로 만들어줘"라고 하면 바로 출력돼요.
+      💡 <b>팁.</b> "수동태" 자리를 다른 단원(시제·관계대명사 등)으로 바꾸면 어느 단원이든 똑같이 만들어져요.
+      만든 뒤 "PDF로 만들어줘"라고 하면 바로 출력돼요.
     </div>
   </div>
 
@@ -210,19 +204,18 @@ h1 .c{color:var(--coral);}
   <div class="foot">© HongLab · 자유롭게 수업에 사용하세요 🙂</div>
 
 </div>
+
 <script>
 function copyPrompt(){
   var el = document.getElementById('promptText');
   var text = el.innerText || el.textContent;
   var btn = document.querySelector('.copybtn');
   navigator.clipboard.writeText(text).then(function(){
-    btn.textContent = '복사됨 ✓';
-    btn.classList.add('done');
+    btn.textContent = '복사됨 ✓'; btn.classList.add('done');
     setTimeout(function(){ btn.textContent='복사'; btn.classList.remove('done'); }, 1800);
   }).catch(function(){
     var r = document.createRange(); r.selectNode(el);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
+    window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
     try{ document.execCommand('copy'); btn.textContent='복사됨 ✓'; btn.classList.add('done');
       setTimeout(function(){ btn.textContent='복사'; btn.classList.remove('done'); }, 1800);
     }catch(e){}
